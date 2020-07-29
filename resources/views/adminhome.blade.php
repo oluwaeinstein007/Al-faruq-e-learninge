@@ -59,28 +59,7 @@
                 </button></a>
                  <p></p>
 
-                <table class="table table-hover table-bordered">
-                    <thead>
-                    <tr>
-                        <th width = "5"> No.</th>
-                        <th width = "5"> Member Name</th>
-                        <th width = "5"> Email</th>
-                        <th width = "5"> Studentship</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                        @foreach ($users as $key => $value)
-                        <tr>
-                            <td>{{ $key+1 }}</td>
-                            <td>{{ $value->name }}</td>
-                            <td>{{ $value->email }}</td>
-                            <td>{{$value->admin }}</td>
-                        </tr>
-                        @endforeach
-                    </tbody>
-                </table>
-
-
+                
             </div>
         </div>
     </div>

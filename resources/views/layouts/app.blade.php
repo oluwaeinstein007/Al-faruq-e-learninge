@@ -26,7 +26,7 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand d-flex" href="{{ url('/') }}">
-                   <div><img src="/svg/adminlogi5.png" style="height:25px"; border-right:1px solid #333; class="pr-3"></div>
+                   <div><img src="/svg/alfaruq1.png" style="height:50px"; border-right:1px solid #333; class="pr-3"></div>
                    <div class="pr-3 pt-1">Al-Faruq E-Learning Portal</div>
                    
                 </a>

@@ -90,7 +90,7 @@
                 
 
                 <div class="links">
-                    <a href="www.alfaruqschools.com">School Website!</a>
+                    <a href="http://www.alfaruqschools.com">School Website!</a>
                     <a href="{{ url('/about') }}">About Us</a>
                 </div>
             </div>

@@ -58,9 +58,9 @@
                 <a href="mywaeccourselist" class="btn btn-success rounded-pill">
                 Enter WAEC Class!
                 </a> <p></p>
-                <a href="" class="btn btn-success rounded-pill">
+                <a href= "{{ url('/tuition') }}"><button class="btn btn-success rounded-pill">
                 Pay Tuition
-                </a>
+                </button></a>
             </div>
         </div>
     </div>

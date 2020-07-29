@@ -44,11 +44,7 @@ Route::group(['middleware' => ['web','auth']], function(){
     });
 
 });
-    
-    Route::get('/uploaddash',function(){
-        return view ('uploaddash');
-    });
-    
+
 
 
 Route::group(['middleware' => ['web','auth']], function(){
@@ -96,6 +92,16 @@ Route::group(['middleware' => ['web','auth']], function(){
 
     });
 
+    Route::get('/tuition', function(){
+        if (Auth::user()->admin == 0){
+            $data = ClassSubject::all();
+        return view('tuition');
+        } else{
+            return view('welcome');           
+        }
+    });
+
+    
     Route::get('/adminhome', function(){
         if (Auth::user()->admin == 1){
             return view('adminhome');
