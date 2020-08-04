@@ -16,6 +16,32 @@ class UploadController extends Controller
         return view('uploaddash', compact('data'));
     }
 
+    public function direct (String $exam) {
+      $urlDirections = [
+        'jamb' => function () {
+          return $this->myjambcourselist();
+        },
+        'waec' => function () {
+          return $this->mywaeccourselist();
+        },
+        'post-jamb' => function () {
+          return $this->mypostcourselist();
+        },
+        'ielts' => function () {
+          return $this->myieltscourselist();
+        },
+        'sat' => function () {
+          return $this->mysatcourselist();
+        }
+      ];
+      $results = array_key_exists($exam, $urlDirections);
+      if ($results) {
+        return $urlDirections[$exam]();
+      } else {
+        return redirect('home');
+      }
+    }
+
 
     public function VideoUpload(Request $request){
 
@@ -64,7 +90,7 @@ class UploadController extends Controller
       return view('Jamb',compact('jamblist','mycount'));
   }
 
-    public function myietscourselist()
+    public function myieltscourselist()
     {
       //get all videos belongs to ielts_vid
        $Ieltslist = 'ielts_vid';

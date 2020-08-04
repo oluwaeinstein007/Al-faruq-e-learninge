@@ -30,11 +30,17 @@ Route::get('/about', function(){
 
 
 Route::group(['middleware' => ['web','auth']], function(){
-    
-
-    Route::get('/home', function(){
-        if (Auth::user()->admin == 0){
-            return view('home');
+    Route::get('/home', function () {
+        if (Auth::user()->admin == 0) {
+            return view('home', [
+                'exams' => [
+                    [ "JAMB", "class/jamb" ],
+                    [ "WAEC", "class/waec" ],
+                    [ "POST-UTME", "class/post-jamb" ],
+                    [ "IELTS", "class/ielts" ],
+                    [ "SAT", "class/sat" ],
+                ],
+            ]);
         } else{
             $users['users'] = \App\User::all();
             return view('adminhome', $users);
@@ -47,7 +53,7 @@ Route::group(['middleware' => ['web','auth']], function(){
 
 
 
-Route::group(['middleware' => ['web','auth']], function(){
+Route::group(['middleware' => ['web','auth']], function() {
     
 
     Route::get('/uploadvid', function(){
@@ -115,8 +121,12 @@ Route::group(['middleware' => ['web','auth']], function(){
 });
 
 Route::post('/upload', 'UploadController@VideoUpload');
-    Route::get('/myjambcourselist','UploadController@myjambcourselist');
-    Route::get('/myietscourselist','UploadController@myietscourselist');
-    Route::get('/mypostcourselist','UploadController@mypostcourselist');
-    Route::get('/mysatcourselist','UploadController@mysatcourselist');
-    Route::get('/mywaeccourselist','UploadController@mywaeccourselist');
+
+// Apply payment middleware to the exam page routes
+Route::get('/payment/{exam}', 'PaymentController@index');
+Route::get('/payment', 'PaymentController@logPayment');
+Route::group([
+    'middleware' => ['web', 'payment']
+], function () {
+    Route::get('/class/{exam}','UploadController@direct');
+});
