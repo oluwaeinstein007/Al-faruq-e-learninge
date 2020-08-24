@@ -22,7 +22,7 @@ class UploadController extends Controller
             $request->validate([
                 'video_title' => 'required|max:255',
                 'video_descrip' => 'required|min:25',                
-                'tutorial_videos' => 'mimes:mpeg,ogg,mp4,webm,3gp,mov,flv,avi,wmv,ts|max:100040|required',
+                'tutorial_videos' => 'mimes:mpeg,ogg,mp4,webm,3gp,mov,flv,avi,wmv,ts|required',
                 'class_levels' => 'required',
             ]);
                $file = $request->tutorial_videos;

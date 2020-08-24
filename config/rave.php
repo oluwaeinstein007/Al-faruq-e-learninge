@@ -15,13 +15,13 @@ return [
      * Public Key: Your Rave publicKey. Sign up on https://rave.flutterwave.com/ to get one from your settings page
      *
      */
-    'publicKey' => env('RAVE_PUBLIC_KEY'),
+    'publicKey' => env('FLWPUBK_TEST-43cadc1f16effe44c17da1bdfb221e24-X'),
 
     /**
      * Secret Key: Your Rave secretKey. Sign up on https://rave.flutterwave.com/ to get one from your settings page
      *
      */
-    'secretKey' => env('RAVE_SECRET_KEY'),
+    'secretKey' => env('RFLWSECK_TEST-27e579899636cb78eae4cd512e36abf3-X'),
 
     /**
      * Company/Business/Store Name: The name of your store

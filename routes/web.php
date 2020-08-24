@@ -94,6 +94,7 @@ Route::group(['middleware' => ['web','auth']], function(){
 
     Route::get('/tuition', function(){
         if (Auth::user()->admin == 0){
+            $users = \App\User::all();
             $data = ClassSubject::all();
         return view('tuition');
         } else{

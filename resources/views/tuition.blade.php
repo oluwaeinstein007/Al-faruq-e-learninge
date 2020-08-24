@@ -36,7 +36,7 @@
                         </div>
                     @endif
 
-                    {{ __('Pay Your Tuition') }}
+                    {{ __('Pay Your Tuition') }} <i class="fa fa-money"></i>
                 </div>
 
 
@@ -51,13 +51,14 @@
                         </div>
                     @endif
                 </div>
-
+              
                <div class="card-body">
-                  <form method="post" action="/upload" enctype="multipart/form-data">
+                  <form method="post" action="https://api.flutterwave.com/v3/payments" enctype="multipart/form-data">
                  @csrf
                  
                  <div class="form-group">
-                 <label for="">Student Name</label>
+                 <label for="">Student Name </label>
+                 
                  <input type="name" class="form-control" name="Name" id="" placeholder="Enter your Name">
                  <br>
                    <label for="">Your Email</label>
@@ -74,6 +75,7 @@
                  <option value="40000" id="ielts_tuition"> IELTS : 40,000 for 3 months</option>
                  </select>
                </div>
+
 
                  <button class="rounded-pill float-right" name="tuition" type="submit">Pay Tuition</button>
                 </form>

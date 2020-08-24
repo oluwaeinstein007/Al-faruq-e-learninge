@@ -18,7 +18,7 @@
 					<p>
 						{{ $jamblists['description'] }}
 					</p>
-					<a href="{{ asset($jamblists["tutorial_videos"]) }}" class="btn btn-success float-right" type="button">Download Now</a>
+					<a href="{{$jamblists['tutorial_videos']}}" class="btn btn-success float-right" type="button">Download Now</a>
 					</div>
 				</div>
 
